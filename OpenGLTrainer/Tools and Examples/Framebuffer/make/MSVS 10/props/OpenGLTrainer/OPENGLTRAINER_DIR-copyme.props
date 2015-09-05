@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <OPENGLTRAINER_DEFAULT_DIR>$(UNCC_ITCS_GRAPHICS)\Third Party Libraries\OpenGLTrainer</OPENGLTRAINER_DEFAULT_DIR>
+    <OPENGLTRAINER_DEPENDENCIES_DIR>$(UNCC_ITCS_GRAPHICS)\Third Party Libraries</OPENGLTRAINER_DEPENDENCIES_DIR>
+    <OPENGLTRAINER_DIR>..\..\..\..</OPENGLTRAINER_DIR>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup />
+  <ItemGroup>
+    <BuildMacro Include="OPENGLTRAINER_DEFAULT_DIR">
+      <Value>$(OPENGLTRAINER_DEFAULT_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="OPENGLTRAINER_DEPENDENCIES_DIR">
+      <Value>$(OPENGLTRAINER_DEPENDENCIES_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="OPENGLTRAINER_DIR">
+      <Value>$(OPENGLTRAINER_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,33 @@
+/* This file is parsed by Doxygen and added to the Doxygen generated
+ * documentation */
+
+/**
+\mainpage
+\author Professor Zachary Wartell \n
+	University of North Carolina \n
+	Copyright 2006.  All Rights Reserved.\n
+	
+\section OpenGLTrainer_Introduction OpenGLTrainer 
+
+OpenGLTrainer is a small library of C++ classes and helper functions 
+used in the introductory computer graphics courses taught by Prof. Zachary
+Wartell at University of North Carolina at Charlotte.  OpenGLTrainer links
+against and leverages the following libraries:
+
+	- GLUT - a popular simplistic OpenGL GUI
+	- GLEW - a popular API for accessing advanced OpenGL and extensions 
+	- FreeImage - an API for reading in a variety of common image files 
+
+Instructions for compiling OpenGLTrainer, these dependent libriares, the example
+applications are found in <a href="../OpenGLTrainer Compilation.html"> 
+"../OpenGLTrainer Compilation.html" </a>.
+
+Within OpenGLTrainer itself, only those classes whose documentation is exported
+into HTML pages are meant for student use.  C++ classes labeled as
+'Experimental' or located inside 'Experimental' subdirectories aren't meant to
+be used by students.
+
+\section Citations Citations
+
+\anchor BJST2000 [BJST2000] Bjarne Stroustruop, The C++ Programming Language
+*/

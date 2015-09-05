@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenGLTrainer", "OpenGLTrainer.vcxproj", "{09208F09-9ADF-4A13-9ACD-9F0BEED148AC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release DLL|Win32 = Release DLL|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09208F09-9ADF-4A13-9ACD-9F0BEED148AC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{09208F09-9ADF-4A13-9ACD-9F0BEED148AC}.Debug|Win32.Build.0 = Debug|Win32
+		{09208F09-9ADF-4A13-9ACD-9F0BEED148AC}.Release DLL|Win32.ActiveCfg = Release DLL|Win32
+		{09208F09-9ADF-4A13-9ACD-9F0BEED148AC}.Release DLL|Win32.Build.0 = Release DLL|Win32
+		{09208F09-9ADF-4A13-9ACD-9F0BEED148AC}.Release|Win32.ActiveCfg = Release DLL|Win32
+		{09208F09-9ADF-4A13-9ACD-9F0BEED148AC}.Release|Win32.Build.0 = Release DLL|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,31 @@
+<UserSettings>
+	<ApplicationIdentity version="8.0"/>
+	<ToolsOptions>
+		<ToolsOptionsCategory name="TextEditor" RegisteredName="TextEditor">
+			<ToolsOptionsSubCategory name="C/C++" RegisteredName="C/C++" PackageName="Text Management Package">
+				<PropertyValue name="TabSize">8</PropertyValue>
+				<PropertyValue name="AutoListMembers">true</PropertyValue>
+				<PropertyValue name="IndentStyle">2</PropertyValue>
+				<PropertyValue name="HideAdvancedMembers">true</PropertyValue>
+				<PropertyValue name="ShowNavigationBar">true</PropertyValue>
+				<PropertyValue name="VirtualSpace">false</PropertyValue>
+				<PropertyValue name="InsertTabs">true</PropertyValue>
+				<PropertyValue name="WordWrapGlyphs">true</PropertyValue>
+				<PropertyValue name="EnableLeftClickForURLs">true</PropertyValue>
+				<PropertyValue name="ShowLineNumbers">true</PropertyValue>
+				<PropertyValue name="WordWrap">false</PropertyValue>
+				<PropertyValue name="IndentSize">4</PropertyValue>
+				<PropertyValue name="CutCopyBlankLines">true</PropertyValue>
+				<PropertyValue name="AutoListParams">true</PropertyValue>
+			</ToolsOptionsSubCategory>
+			<ToolsOptionsSubCategory name="C/C++ Specific" RegisteredName="C/C++ Specific" PackageName="Visual C++ Language Manager Package">
+				<PropertyValue name="EnterOutliningModeWhenFilesOpen">true</PropertyValue>
+				<PropertyValue name="AutomaticOutliningOfStatementBlocks">true</PropertyValue>
+				<PropertyValue name="ColorizeInactiveBlocksDifferently">true</PropertyValue>
+				<PropertyValue name="EnableQuickInfoToolTips">true</PropertyValue>
+				<PropertyValue name="IndentBraces">true</PropertyValue>
+				<PropertyValue name="AutomaticOutliningOfPragmaRegions">true</PropertyValue>
+			</ToolsOptionsSubCategory>
+		</ToolsOptionsCategory>
+	</ToolsOptions>
+</UserSettings>

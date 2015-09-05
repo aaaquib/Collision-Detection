@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type">
+    <title>OpenGLTrainer Compilation</title>
+  </head>
+  <body>
+    <h1>Compilation Instructions</h1>
+    <h2>MSVS 2010</h2>
+    <p>By default the OpenGLTrainer source distribution assumes
+      OpenGLTrainer exists in the a directory structure as follows:<br>
+    </p>
+    <ul>
+      <li>"Third Party Libraries\OpenGLTrainer\" - root directory of
+        OpenGLTrainer source distribution founds at <a href="https://cci-subv.uncc.edu/svn/zwartell-public/ITCS%206120-8120/OpenGLTrainer/trunk">https://cci-subv.uncc.edu/svn/zwartell-public/ITCS
+          6120-8120/OpenGLTrainer/trunk</a><br>
+      </li>
+      <li>"Third Party Libraries\glew" - GLEW forked distribution found
+        at <a href="https://cci-subv.uncc.edu/svn/zwartell-public/vendor/glew/local/current">https://cci-subv.uncc.edu/svn/zwartell-public/vendor/glew/local/current</a>&nbsp;</li>
+      <li>"Third Party Libraries\glut" - Glut forked distribution found
+        at <a href="https://cci-subv.uncc.edu/svn/zwartell-public/vendor/opengl.org/glut/local/current">https://cci-subv.uncc.edu/svn/zwartell-public/vendor/opengl.org/glut/local/current</a></li>
+      <li>"Third Party Libraries\FreeImage" - FreeImage forked
+        distribution found at <a href="https://cci-subv.uncc.edu/svn/zwartell-public/vendor/FreeImage/current">https://cci-subv.uncc.edu/svn/zwartell-public/vendor/FreeImage/local/current</a>&nbsp;
+        <br>
+      </li>
+    </ul>
+    
+<p>For each and any of the above libraries that you do not already have,
+ create a svn externals link on your "Third Party Libraries" to retrieve the indicate repo redirectory into the indicated subdirectory in your "Third Party Libraries" directory.&nbsp; Also, the environment variable UNCC_ITCS_GRAPHICS must be set to the
+      directory directly <span style="text-decoration: underline;">above</span>
+      the "Third Party Libraries" mentioned above.<br>
+    </p>
+
+    <p>To compile, first compile OpenGLTrainer's dependencies as
+      follows:<br>
+    </p>
+    <ol>
+      <li>&nbsp; Open "Third Party Libraries\glew\build\vc10\glew.sln"
+        and compile the Project <b>glew_shared</b> using Configuration
+        <b>Debug</b></li>
+      <li>&nbsp; Open "Third Party Libraries\glut\make\Windows\MSVS
+        10\glut.sln" and compile the Project <b>glut</b> using
+        Configuration <b>MT_Debug_DLL</b></li>
+      <li>&nbsp; Open "Third Party
+        Libraries\FreeImage\FreeImage.2010.sln" and compile Project <b>FreeImagePlus
+        </b>using Configuration <b>Debug</b></li>
+    </ol>
+    <p>Next compile OpenGLTrainer as follows:<br>
+    </p>
+    <ul>
+      <li>Open "OpenGLTrainer\make\MSVS 10\OpenGLTrainer.sln" and
+        compile the Configuration <span style="font-weight: bold;">Debug</span></li>
+    </ul>
+    <br>
+    As a final test compile and run the PanZoomWindow application:<br>
+    <ol>
+      <li>Open ""OpenGLTrainer\Tools and
+        Examples\PanZoomWindow\make\MSVS 10\PanZoomWindow.sln"</li>
+      <li>Compile and run (see instructions in <a href="../Tools%20and%20Examples/PanZoomWindow/README.txt">PanZoomWindow/README.txt</a>)<br>
+      </li>
+    </ol>
+    <h2>Others</h2>
+    <p>Support for all other compilers is deprecated at this time
+      although various old compilation scripts are possibly still
+      hanging around.<br>
+    </p>
+    <h1>Compilation Scripts</h1>
+    <p>Audience: Maintainers of OpenGLTrainer<br>
+    </p>
+    <p><a href="http://msdn.microsoft.com/en-us/library/a4xbdz1e%28v=vs.100%29.aspx">MSVS
+        Property Sheets</a> (.props files) are located in
+      "OpenGLTrainer\make\MSVS 10\props".&nbsp;&nbsp; There are two
+      basic .props hierarchies: one for OpenGLTrainer Maintainers and
+      one for OpenGLTrainer Applications developers.&nbsp; The two
+      hierarchy's share some (but not all) .props files.&nbsp; By
+      default for applications this is done using the svn externals
+      links.&nbsp; Application's retrieve the default set of .props
+      files from the OpenGLTrainer SVN repository at
+      $OPENGLTRAINER_SVN_REPO/trunk/make/MSVS 10/props/. <br>
+    </p>
+    <br>
+    <ul>
+      <ul>
+        <li>OpenGLTrainer Applications:&nbsp;&nbsp;&nbsp;&nbsp; The
+          .props files are as follows.&nbsp; <br>
+          <br>
+        </li>
+        <ul>
+          <li><span style="text-decoration: underline;">OpenGLTrainer -
+              Debug.props</span> - An OpenGLTrainer application's
+            vcxproj's Debug config Properties must include this
+            file.&nbsp;</li>
+          <ul>
+            <li><span style="font-weight: bold;">File
+                Location:&nbsp;&nbsp; </span>MyApp\make\MSVS
+              10\props\OpenGLTrainer\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              [via svn external link]<br>
+              <br>
+            </li>
+            <li><span style="font-weight: bold;">Inheritance:</span>&nbsp;&nbsp;
+              This .props file automatically inherit from the following:<br>
+              <br>
+            </li>
+            <ul>
+              <li><span style="text-decoration: underline;">OpenGLTrainer
+                  Dependencies - Debug.props</span> - contains Debug
+                config specific settings.</li>
+              <ul>
+                <li><span style="font-weight: bold;">File
+                    Location:&nbsp;&nbsp; </span>MyApp\make\MSVS
+                  10\props\OpenGLTrainer\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                  [via svn external link]<br>
+                  <br>
+                </li>
+              </ul>
+              <li><span style="text-decoration: underline;">OpenGLTrainer.props</span>
+                - contains generic config settings (common to all
+                config's).&nbsp; </li>
+              <ul>
+                <li>User Macro's for file paths to OpenGLTrainer and
+                  it's dependent library's files</li>
+                <li>other common compiler settings<br>
+                  <br>
+                </li>
+                <li><span style="font-weight: bold;">File
+                    Location:&nbsp;&nbsp; </span>MyApp\make\MSVS
+                  10\props\OpenGLTrainer\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                  [via svn external link]<br>
+                  <br>
+                </li>
+              </ul>
+            </ul>
+            <ul>
+              <li><span style="text-decoration: underline;">OPENGLTRAINER_DIR.props</span>
+                - contains 1 User Macro OPENGLTRAINER_DIR which is path
+                to root of OpenGLTrainer source distribution</li>
+              <ul>
+                <li>Application developers must set this one User
+                  Macro.&nbsp;&nbsp; All other User Macro's in the other
+                  .props file build off of this one. Each app contains <br>
+                  <br>
+                  <span style="font-weight: bold;"></span></li>
+                <li><span style="font-weight: bold;">File
+                    Location:&nbsp;&nbsp; </span>MyApp\make\MSVS
+                  
+10\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+                  [local copy; <span style="text-decoration:
+                    underline;">not</span> a svn external link]<br>
+                  <br>
+                </li>
+              </ul>
+            </ul>
+          </ul>
+        </ul>
+        <li>OpenGLTrainer Maintainer:&nbsp;&nbsp;&nbsp;&nbsp; The MSVS
+          Property file hierarchy is as follows:<br>
+          <br>
+        </li>
+        <ul>
+          <li><span style="text-decoration: underline;">OpenGLTrainer
+              Lib - Debug.props</span> - Debug config specific settings
+            used for compiling OpenGLTrainer. This file inherits the
+            follow prop's files:<br>
+            <ul>
+              <li><span style="text-decoration: underline;">OpenGLTrainer
+                  Dependencies - Debug.props</span> - <span style="font-style: italic;">see above</span></li>
+              <ul>
+                <li><span style="font-style: italic;"></span><span style="font-weight: bold;">File
+                    Location:&nbsp;&nbsp;&nbsp;</span>OpenGLTrainer\make\MSVS
+
+                  10\props&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                  [local copy; svn linked to by apps]<br>
+                  <br>
+                </li>
+              </ul>
+              <li><span style="text-decoration: underline;">OpenGLTrainer.props</span>
+                - <span style="font-style: italic;">see </span><span style="font-style: italic;">above</span><span style="font-weight: bold;"></span></li>
+              <ul>
+                <li><span style="font-weight: bold;">File
+                    Location:&nbsp;&nbsp;&nbsp;</span>OpenGLTrainer\make\MSVS
+
+                  10\props&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                  [local copy; svn linked to by apps]<br>
+                  <br>
+                </li>
+              </ul>
+              <li><span style="text-decoration: underline;">OPENGLTRAINER_DIR.props</span>
+                - contains 1 User Macro OPENGLTRAINER_DIR which is path
+                to root of OpenGLTrainer source distribution</li>
+              <ul>
+                <li><span style="font-weight: bold;">File
+                    Location:&nbsp;&nbsp;&nbsp;</span>OpenGLTrainer\make\MSVS
+
+
+
+                  
+10\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+                  [local copy, <span style="text-decoration:
+                    underline;">not</span> svn link'ed by app's]<br>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+      </ul>
+    </ul>
+  
+
+</body></html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="Framebuffer"
+	InheritedPropertySheets=".\OpenGLTrainer.vsprops"
+	>
+	<UserMacro
+		Name="OPENGLTRAINER_DIR"
+		Value="G:\Users\Zachary\Documents\Career\classes\OpenGLTrainer\trunk\"
+	/>
+</VisualStudioPropertySheet>

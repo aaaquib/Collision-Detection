@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="OpenGLTrainer"
+	>
+	<UserMacro
+		Name="CompilerName"
+		Value="MSVS 90"
+	/>
+	<UserMacro
+		Name="OPENGLTRAINER_DIR"
+		Value="$(UNCC_ITCS_GRAPHICS)\Third Party Libraries\OpenGLTrainer"
+	/>
+	<UserMacro
+		Name="OPENGLTRAINER_LIB_DIR"
+		Value="$(OPENGLTRAINER_DIR)\lib\$(CompilerName)\$(PlatformName)\$(ConfigurationName)"
+	/>
+	<UserMacro
+		Name="FREEIMAGEPLUS_DIR"
+		Value="$(UNCC_ITCS_GRAPHICS)\Third Party Libraries\FreeImage\Wrapper\FreeImagePlus"
+	/>
+	<UserMacro
+		Name="FREEIMAGE_DIR"
+		Value="$(UNCC_ITCS_GRAPHICS)\Third Party Libraries\FreeImage"
+	/>
+	<UserMacro
+		Name="GLEW_DIR"
+		Value="$(UNCC_ITCS_GRAPHICS)\Third Party Libraries\glew\"
+	/>
+	<UserMacro
+		Name="GLUT_DIR"
+		Value="$(UNCC_ITCS_GRAPHICS)\Third Party Libraries\glut\"
+		PerformEnvironmentSet="true"
+	/>
+	<UserMacro
+		Name="GLUT_LIB_DIR"
+		Value="$(GLUT_DIR)\lib\Microsoft\$(CompilerName)\$(PlatformName)\MT_$(ConfigurationName)_DLL"
+		PerformEnvironmentSet="true"
+	/>
+	<UserMacro
+		Name="GLUT_BIN_DIR"
+		Value="$(GLUT_LIB_DIR)"
+		PerformEnvironmentSet="true"
+	/>
+	<UserMacro
+		Name="OPENGLTRAINER_BIN_DIR"
+		Value="$(OPENGLTRAINER_LIB_DIR)"
+		PerformEnvironmentSet="true"
+	/>
+</VisualStudioPropertySheet>

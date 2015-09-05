@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="UserMacros">
+    <CompilerName>MSVS 10</CompilerName>
+    <OPENGLTRAINER_LIB_DIR>$(OPENGLTRAINER_DIR)\lib\$(CompilerName)\$(Platform)\$(Configuration)</OPENGLTRAINER_LIB_DIR>
+    <OPENGLTRAINER_BIN_DIR>$(OPENGLTRAINER_LIB_DIR)</OPENGLTRAINER_BIN_DIR>
+    <FREEIMAGEPLUS_DIR>$(OPENGLTRAINER_DEPENDENCIES_DIR)\FreeImage\Wrapper\FreeImagePlus</FREEIMAGEPLUS_DIR>
+    <FREEIMAGE_DIR>$(OPENGLTRAINER_DEPENDENCIES_DIR)\FreeImage</FREEIMAGE_DIR>
+    <FREEIMAGEPLUS_BIN_DIR>$(FREEIMAGEPLUS_DIR)\$(Configuration)</FREEIMAGEPLUS_BIN_DIR>
+    <FREEIMAGE_BIN_DIR>$(FREEIMAGE_DIR)\$(Configuration)</FREEIMAGE_BIN_DIR>
+    <GLUT_DIR>$(OPENGLTRAINER_DEPENDENCIES_DIR)\glut\</GLUT_DIR>
+    <GLUT_LIB_DIR>$(GLUT_DIR)\lib\Windows\$(CompilerName)\$(Platform)\MT_$(Configuration)_DLL</GLUT_LIB_DIR>
+    <GLUT_BIN_DIR>$(GLUT_LIB_DIR)</GLUT_BIN_DIR>
+    <GLEW_DIR>$(OPENGLTRAINER_DEPENDENCIES_DIR)\glew\</GLEW_DIR>
+    <GLEW_BIN_DIR>$(GLEW_DIR)\bin</GLEW_BIN_DIR>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(GLUT_DIR)\include;$(OPENGLTRAINER_DIR)\include;$(FREEIMAGEPLUS_DIR);$(FREEIMAGE_DIR)\Source;$(GLEW_DIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(OPENGLTRAINER_LIB_DIR);$(GLEW_DIR)\lib;$(GLUT_LIB_DIR);$(FREEIMAGE_DIR)\$(Configuration);$(FREEIMAGEPLUS_DIR)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PreBuildEvent>
+      <Command>echo GLUT_DIR: $(GLUT_DIR) &amp; echo OPENGLTRAINER_DIR: $(OPENGLTRAINER_DIR)</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="CompilerName">
+      <Value>$(CompilerName)</Value>
+    </BuildMacro>
+    <BuildMacro Include="OPENGLTRAINER_LIB_DIR">
+      <Value>$(OPENGLTRAINER_LIB_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="OPENGLTRAINER_BIN_DIR">
+      <Value>$(OPENGLTRAINER_BIN_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="FREEIMAGEPLUS_DIR">
+      <Value>$(FREEIMAGEPLUS_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="FREEIMAGE_DIR">
+      <Value>$(FREEIMAGE_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="FREEIMAGEPLUS_BIN_DIR">
+      <Value>$(FREEIMAGEPLUS_BIN_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="FREEIMAGE_BIN_DIR">
+      <Value>$(FREEIMAGE_BIN_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="GLUT_DIR">
+      <Value>$(GLUT_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="GLUT_LIB_DIR">
+      <Value>$(GLUT_LIB_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="GLUT_BIN_DIR">
+      <Value>$(GLUT_BIN_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="GLEW_DIR">
+      <Value>$(GLEW_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="GLEW_BIN_DIR">
+      <Value>$(GLEW_BIN_DIR)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
